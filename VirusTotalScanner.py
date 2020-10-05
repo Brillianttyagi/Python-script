@@ -72,7 +72,7 @@ with vt.Client(API_KEY) as client:
     try:
         print("Checking if file already available in VirusTotal DB.", end="")
         stats = client.get_object("/files/{}".format(file_hash)).last_analysis_stats
-        print("\rFile is already available in VirusTotal DB")
+        print("\rFile is already available in VirusTotal DB.      ")
     except vt.error.APIError as ex:
         if not ex.code == "NotFoundError":
             raise
